@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* media queries ---------------------------------------------------------------- */
+/*cuando la pantalla es menor a 1204 px*/
+@media (max-width: 1204px) {  
+    #carouselExampleSlidesOnly img {
+        /* La propiedad CSS object-fit indica cómo el contenido de un elemento reemplazado, por ejemplo un <img> o <video>, debería redimensionarse para ajustarse a su contenedor. */
+        object-fit: cover;
+    }
+    #cardFlotante {
+        position: absolute;
+        left: 35% !important; 
+    }
+}
+/*cuando la pantalla es menor a 768 px*/
+@media (max-width: 768px) {  
+    #cardFlotante {
+        position: absolute;
+        left: 5% !important;        
+    }
+}
+/*cuando la pantalla es menor a 480 px*/
+/* @media (max-width: 480px) {  
+    
+} */
+
+/* Nav ---------------------------------------------------------------------------- */
+
+/* Estilos navbar */
+#logo {
+    padding-left: 3.68%;  /*50px*/
+}
+.alinearAlFinal {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3.68%;  /*50px*/
+}
+/* Fin estilos navbar */
+
+/* Main (contenido principal) ----------------------------------------------------- */
+
+#carouselExampleSlidesOnly img {
+    height: 37.5rem;  /*600px*/
+}
+
+/* Estilos card flotante */
+#cardFlotante {
+    padding-right: 7.35%;  /*100px*/
+    position: absolute;
+    left: 50%; 
+    top:24.375rem;  /*390px*/
+}
+#cardFlotante h1, #cardFlotante p {
+    color: white;
+}
+#cardFlotante p {
+    text-align: justify;
+}
+#cardFlotante h1, #botones {
+    display: flex;
+    justify-content: flex-end;
+}
+#botones a:first-child {  /* La pseudo-clase :first-child de CSS representa el primer elemento entre un grupo de elementos hermanos. */
+    margin-right: 2%;  /*10px*/
+}
+/* Fin estilos card flotante */
+/* Estilos oradores y formulario, título principal  */
+.separar {
+    margin-top: 0.625rem;  /*10px*/
+    margin-bottom: 0.625rem;  /*10px*/
+    margin-left: 4.5%;  /*20px*/
+    margin-right: 4.5%;  /*20px*/
+}
+.centrar {
+    display: flex;
+    justify-content: center;
+}
+.altura {
+    height: 0.938rem;  /*15px*/
+}
+/* Fin estilos oradores y formulario, título principal  */
+/* Estilos dos div, imágen (1° div) y texto (2° div)  */
+.separar2 {
+    margin-top: 1.875rem;  /*30px*/
+    margin-bottom: 1.25rem;  /*20px*/
+}
+/* Fin estilos dos div, imágen (1° div) y texto (2° div)  */
+/* Estilos card Tickets */
+#tickets .card:hover {
+    background-color: whitesmoke;
+}
+/* Fin estilos card Tickets */
+/* Estilos para contenido (main) */
+main {
+    margin-bottom: 3.125rem;  /*50px*/
+}
+/* Fin estilos para contenido (main) */
