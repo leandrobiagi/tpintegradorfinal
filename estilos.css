@@ -98,4 +98,8 @@
 main {
     margin-bottom: 3.125rem;  /*50px*/
 }
+.altura2 {
+    height: 100vh;
+    min-height: 300px;
+}
 /* Fin estilos para contenido (main) */

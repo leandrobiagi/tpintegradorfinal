@@ -1,56 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP integrador front</title>
-    <link rel="stylesheet" type="text/css" href="estilos.css">
-    <!-- CSS Bootstrap v5.3 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-</head>
-<body>
-    <!-- Encabezado -------------------------------------------------------------------------------->
-    <header>
-      <!-- Componente Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-2 pb-3">
-        <div class="container-fluid">
-          <div id="logo">
-            <a class="navbar-brand" href="#">
-            <!-- align-middle centra verticalmente -->
-            <img src="imagenes/codoacodo.png" alt="codoacodo" width="100" height="" class="d-inline-block align-middle">
-            Conf Bs As
-            </a>
-          </div>
-       
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-       
-          <div class="collapse navbar-collapse alinearAlFinal" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">La conferencia</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#oradores">Los oradores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#lugarfecha">El lugar y la fecha</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#orador">Conviértete en orador</a>
-              </li>
-              <li class="nav-item">
-                <!-- link-success pone color verde el enlace -->
-                <a class="nav-link link-success" href="#tickets">Comprar tickets</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Fin componente Navbar -->
-    </header>
     <!-- Contenido -------------------------------------------------------------------------------->
     <main>
       <section>
@@ -271,23 +218,23 @@
 
         <!-- Formulario tickets -->
         <div class="container">
-          <form class="row g-3">
+          <form class="row g-3" method="post" action="insertar_datos.php">
             <div class="col-md-4 offset-md-2">
-              <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+              <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required aria-required="true" name="nombre">
             </div>
             <div class="col-md-4">
-              <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+              <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required aria-required="true" name="apellido">
             </div>
             <div class="col-md-8 offset-md-2">
-              <input type="email" class="form-control" placeholder="Correo" aria-label="Correo">
+              <input type="email" class="form-control" placeholder="Correo" aria-label="Correo" required aria-required="true" name="correo">
             </div>
             <div class="col-md-4 offset-md-2">
               <label for="inputCantidad" class="form-label">Cantidad</label>
-              <input type="text" class="form-control" id="inputCantidad" placeholder="Cantidad">
+              <input type="number" class="form-control" id="inputCantidad" placeholder="Cantidad" min="1" max="5" value="1" required aria-required="true" name="cantidad">
             </div>
             <div class="col-md-4">
               <label for="inputCategoria" class="form-label">Categoría</label>
-              <select id="inputCategoria" class="form-select">
+              <select id="inputCategoria" class="form-select" required aria-required="true" name="inputCategoria">
                 <option selected value="estudiante">Estudiante</option>
                 <option value="trainee">Trainee</option>
                 <option value="junior">Junior</option>
@@ -298,53 +245,82 @@
               <div id="divTotal" class="text-bg-info bg-opacity-25 p-3 form-control">Total a pagar: $</div>
             </div>
             <div class="col-md-4 offset-md-2 d-grid">
-              <input id="btnBorrar" class="btn btn-success" type="reset" value="Borrar">
+              <input id="btnBorrar" class="btn btn-danger" type="reset" value="Borrar">
             </div>
             <div class="col-md-4 d-grid">
-              <button id="btnResumen" class="btn btn-success" type="button">Resumen</button>
+              <button id="btnResumen" class="btn btn-secondary" type="button">Resumen</button>
+            </div>
+            <div class="col-md-8 offset-md-2 d-grid">
+              <button id="btnComprar" class="btn btn-success" type="submit">Comprar</button>
             </div>
           </form>
         </div>
         <!-- Fin formulario tickets -->
       </section>
-    </main>
-    <!-- Pie de página ---------------------------------------------------------------------------->
-    <footer class="bg-dark text-white p-4">
-      <!-- Componente Nav -->
-      <div class="row">
-        <div class="col-md-10 offset-md-1">
-          <ul class="nav d-flex justify-content-evenly align-items-center">
-            <li class="nav-item">
-              <a class="nav-link link-light" href="#"><span class="d-flex flex-column">Preguntas</span><span class="d-flex flex-column">frecuentes</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="#">Contáctanos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="#">Prensa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="#">Conferencias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="#"><span class="d-flex flex-column">Términos y</span><span class="d-flex flex-column">condiciones</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="#">Privacidad</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="#">Estudiantes</a>
-            </li>
-          </ul>
+
+      <section>
+         <!-- Título principal tabla tickets vendidos -->
+          <!-- mt-5 (margen superior de 5) -->
+         <div class="separar mt-5">
+          <div class="altura centrar">
+            <!-- text-uppercase (texto en mayúscula) -->
+            <h6 class="text-uppercase">Lista de</h6>
+          </div>
+          <div class="centrar">
+            <!-- fw-semibold texto seminegrita y text-uppercase (texto en mayúscula) -->
+            <h2 class="fw-semibold text-uppercase">Tickets vendidos</h2>
+          </div>
         </div>
-      </div>
-    <!-- Fin componente Nav -->
-    </footer>
+        <!-- Fin título principal tabla tickets vendidos -->
 
-
-    <!-- Javascript Bootstrap v5.3 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <!-- Javascript -->
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- Tabla tickets vendidos -->
+        <div class="container-fluid">
+          <div class="row centrar">
+            <div class="col-md-10">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Borrar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+  <?php
+    require './include/config/conexion.php';
+  
+    $consultas = mysqli_query($conexion, "SELECT * FROM tickets_vendidos");
+  
+    while($listadoArray = mysqli_fetch_array($consultas)) {
+  ?>
+      <tr>
+        <th scope="row"> <?php echo $listadoArray['id_ticket']; ?> </th>
+        <td> <?php echo $listadoArray['nombre']; ?> </td>
+        <td> <?php echo $listadoArray['apellido']; ?> </td>
+        <td> <?php echo $listadoArray['correo']; ?> </td>
+        <td> <?php echo $listadoArray['cantidad']; ?> </td>
+        <td> <?php echo $listadoArray['categoria']; ?> </td>
+        <td>
+            <form method="post" action="borrar_datos.php">
+              <input type="hidden" id="borrar" name="borrar" value="<?php echo $listadoArray['id_ticket']; ?>">
+              <button type="submit" class="btn btn-danger">Borrar</button>
+            </form>
+        </td>
+      </tr>
+  <?php
+    }
+  ?>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin tabla tickets vendidos -->  
+      </section>
+    </main>

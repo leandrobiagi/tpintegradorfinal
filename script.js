@@ -6,7 +6,7 @@ botonBorrar.addEventListener("click", borrarElTotal)
 
 function CalcularYMostrarTotal() {
     let categoria = document.getElementById("inputCategoria").value
-    
+
     switch(categoria) {
         case "estudiante":
             MostrarTotal(totalAPagarConDescuentoDe(80))
